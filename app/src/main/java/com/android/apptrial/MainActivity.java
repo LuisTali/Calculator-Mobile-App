@@ -46,66 +46,85 @@ public class MainActivity extends AppCompatActivity {
         multBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                number = Integer.parseInt(String.valueOf(tV.getText()));
-                tV.setText("");
-                idLastPressed = R.id.mult;
+                String numberTxt = String.valueOf(tV.getText());
+                if(!(numberTxt.equals(""))){
+                    number = Integer.parseInt(String.valueOf(tV.getText()));
+                    tV.setText("");
+                    idLastPressed = R.id.mult;
+                }
+
             }
         });
 
         restBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                number = Integer.parseInt(String.valueOf(tV.getText()));
-                tV.setText("");
-                idLastPressed = R.id.rest;
+                String numberTxt = String.valueOf(tV.getText());
+                if(!(numberTxt.equals(""))){
+                    number = Integer.parseInt(String.valueOf(tV.getText()));
+                    tV.setText("");
+                    idLastPressed = R.id.rest;
+                }
+
             }
         });
 
         sumBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                number = Integer.parseInt(String.valueOf(tV.getText()));
-                tV.setText("");
-                idLastPressed = R.id.sum;
+                String numberTxt = String.valueOf(tV.getText());
+                if(!(numberTxt.equals(""))){
+                    number = Integer.parseInt(String.valueOf(tV.getText()));
+                    tV.setText("");
+                    idLastPressed = R.id.sum;
+                }
+
             }
         });
 
         divBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                number = Integer.parseInt(String.valueOf(tV.getText()));
-                tV.setText("");
-                idLastPressed = R.id.div;
+                String numberTxt = String.valueOf(tV.getText());
+                if(!(numberTxt.equals(""))) {
+                    number = Integer.parseInt(numberTxt);
+                    tV.setText("");
+                    idLastPressed = R.id.div;
+                }
             }
         });
 
         introBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int number2 = Integer.parseInt(String.valueOf(tV.getText()));
-                int resultado;
+                String numberTxt = String.valueOf(tV.getText());
+                if(!(numberTxt.equals(""))){
+                    int number2 = Integer.parseInt(String.valueOf(numberTxt));
+                    int resultado;
 
-                switch (idLastPressed){
-                    case R.id.mult:
-                        resultado = number * number2;
-                        tV.setText(Integer.toString(resultado));
-                        break;
+                    switch (idLastPressed){
+                        case R.id.mult:
+                            resultado = number * number2;
+                            tV.setText(Integer.toString(resultado));
+                            break;
 
-                    case R.id.rest:
-                        resultado = number - number2;
-                        tV.setText(Integer.toString(resultado));
-                        break;
+                        case R.id.rest:
+                            resultado = number - number2;
+                            tV.setText(Integer.toString(resultado));
+                            break;
 
-                    case R.id.sum:
-                        resultado = number + number2;
-                        tV.setText(Integer.toString(resultado));
-                        break;
+                        case R.id.sum:
+                            resultado = number + number2;
+                            tV.setText(Integer.toString(resultado));
+                            break;
 
-                    case R.id.div:
-                        resultado = number / number2;
-                        tV.setText(Integer.toString(resultado));
-                        break;
+                        case R.id.div:
+                            resultado = number / number2;
+                            tV.setText(Integer.toString(resultado));
+                            break;
+                    }
                 }
+
             }
         });
 
